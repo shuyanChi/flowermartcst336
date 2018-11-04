@@ -17,7 +17,7 @@
             if ($item['flowerName'] == $_GET['flowerName']) {
                 $_SESSION['count'] += ($_GET['update'] - $item['quantity']);
                 $item['quantity'] = $_GET['update'];
-                break;
+                //break;
             }
         }
     }
@@ -43,7 +43,7 @@
                         </div>
                         <ul class='nav navbar-nav'>
                             <li><a href='index.php'>Home</a></li>
-                            <li><a href='fscart.php'><span class='glyphicon glyphicon-shopping-cart' aria-hidden='true'></span> Cart (<?php echo displayCartCount(); ?>)</a></li>
+                            <li><a href='fscart.php'><span class='glyphicon glyphicon-shopping-cart' aria-hidden='true'></span> Cart (<?php displayCartcount();?>)</a></li>
                         </ul>
                     </div>
                 </nav>

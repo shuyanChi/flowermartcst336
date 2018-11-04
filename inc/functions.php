@@ -176,14 +176,21 @@ function displayCart() {
 
 $_SESSION['count'];
 function displayCartCount() {
-    return $_SESSION['count'];
+    if (isset($_GET['bigredbutton'])) {
+        $_SESSION['count'] = 0;
+        
+    }
+    echo $_SESSION['count'];
 }
 
 function nuke() {
     if (isset($_GET['bigredbutton'])) {
+        $_SESSION['count'] = 0;
         session_destroy();
+        
     }
     else {
+        $_SESSION['count'];
         displayCart();
     }
 }
