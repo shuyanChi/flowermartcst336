@@ -49,7 +49,7 @@
                 </nav>
                 <br /> <br /> <br />
                 <h2>How about, Flower Basket?</h2>
-                <?php  print_r($_SESSION['cart']);  ?>
+                <?php  //print_r($_SESSION['cart']);  ?>
                 <!-- Cart Items -->
                 <br/><br/><br/>
                 <form><button name='bigredbutton' value='BOOM' >Nuke</button></form>
