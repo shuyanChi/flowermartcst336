@@ -1,5 +1,5 @@
 <?php
-    $temp = array();
+$temp = array();
     
 function iCannnotBelieveIHadtoWriteThisFunctionMyselfPHPhasFAILEDME($var) {
         for( $i = 0; $i < count($_SESSION['cart']); $i++) {
@@ -179,16 +179,13 @@ function displayCartCount() {
     return $_SESSION['count'];
 }
 
-
-function nukeButton() {
-    echo "<form><button name='bigredbutton' value='BOOM' >Nuke</button></form>";
-}
 function nuke() {
     if (isset($_GET['bigredbutton'])) {
         session_destroy();
     }
+    else {
+        displayCart();
+    }
 }
-
-
 
 ?>

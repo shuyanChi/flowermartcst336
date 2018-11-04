@@ -52,13 +52,9 @@
                 <?php  print_r($_SESSION['cart']);  ?>
                 <!-- Cart Items -->
                 <br/><br/><br/>
-                You have to click the nuke button twice to reset shopping cart.
+                <form><button name='bigredbutton' value='BOOM' >Nuke</button></form>
                 <?php
-                    nukeButton(); 
                     nuke();
-                    if (isset($_SESSION['cart'])) {
-                        displayCart();
-                    }
                 ?>
             </div>
         </div>
