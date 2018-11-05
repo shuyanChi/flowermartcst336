@@ -114,6 +114,12 @@
                            </select>
             </p>
             <p>
+                Colors <select name='flowerColor'>
+                                <option value=""> Select One</option>
+                                <?=displayColors()?>
+                           </select>
+            </p>
+            <p>
                 
             </p>
             <p>
@@ -121,6 +127,8 @@
             </p>
             <p>
                 Order: <input type='radio' name='order' value='asc' /> A-Z  <input type='radio' name='order' value='desc' /> Z-A
+                       <br>
+                       <input type='radio' name='order' value='descPrice' /> Price high-low  <input type='radio' name='order' value='ascPrice' /> Price low-high
             </p>
             <p>
                 <input type='submit' name='searchForm' value='submit' />
@@ -133,7 +141,7 @@
     <footer>
         cst336. 2018 &copy; <br />
         <strong>Disclaimer: </strong> The information in this webpage is fictious. <br />
-        It is unsed for acdemic purposes only. <br />
+        It is used for acdemic purposes only. <br />
         <img src = "img/csumb2-300x190.png" alt = "csumb logo" /> 
     </footer>
 </html>
