@@ -116,7 +116,7 @@ function displayResults() {
             
         //Display item as tablerow.
         echo '<tr>';
-        echo "<td><img src='$flower_img'></td>";
+        echo "<td><img src='$flower_img' class=images></td>";
         echo "<td>";
         echo "<h4>$flowerName</h4>";
         
