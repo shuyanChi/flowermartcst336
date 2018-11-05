@@ -3,6 +3,7 @@ $temp = array();
     
 function iCannnotBelieveIHadtoWriteThisFunctionMyselfPHPhasFAILEDME($var) {
         for( $i = 0; $i < count($_SESSION['cart']); $i++) {
+            echo "<script> console.log('".$_SESSION['cart'][$i]['flowerName']."'); </script>";
             if ($var == $_SESSION['cart'][$i]['flowerName']) {
                 return true;
             }
@@ -31,6 +32,18 @@ function displayCategories() {
         echo "<option>" . $rec['category'] . "</option><br/>";
     }
 }
+
+function displayColors() {
+    global $dbConn;
+    $sql = "SELECT DISTINCT flowerColor FROM flowers";
+    $stmt = $dbConn->prepare($sql);
+    $stmt->execute();
+    $record = $stmt->fetchALL(PDO::FETCH_ASSOC);
+        
+    foreach($record as $rec) {
+        echo "<option>" . $rec['flowerColor'] . "</option><br/>";
+    }
+}
     
 function filterProducts() {
     global $dbConn;
@@ -41,6 +54,7 @@ function filterProducts() {
             $category = $_GET['category'];
             $priceFrom = $_GET['priceFrom'];
             $priceTo = $_GET['priceTo'];
+            $flowerColor = $_GET['flowerColor'];
             
             //echo "Yeah That's THE STUFF!!!!<br/><br/>";
             
@@ -63,11 +77,19 @@ function filterProducts() {
                 $sql .= " AND flowerPrice <= :priceTo";
                 $np[':priceTo'] = $priceTo;
             }
+            if(!empty($_GET['flowerColor'])) {
+                $sql .= " AND flowerColor = :flowerColor";
+                $np[':flowerColor'] = $flowerColor;
+            }
             if(isset($_GET['order'])) {
                 if($_GET['order'] == "asc") {
                     $sql .= " ORDER BY flowerName ASC";
-                } else {
+                } else if ($_GET['order'] == "desc") {
                     $sql .= " ORDER BY flowerName DESC";
+                } else if ($_GET['order'] == "ascPrice") {
+                    $sql .= " ORDER BY flowerPrice ASC";
+                } else if ($_GET['order'] == "descPrice"){
+                    $sql .= " ORDER BY flowerPrice DESC";
                 }
             }
             
