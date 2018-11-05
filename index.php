@@ -141,7 +141,7 @@
     <footer>
         cst336. 2018 &copy; <br />
         <strong>Disclaimer: </strong> The information in this webpage is fictious. <br />
-        It is unsed for acdemic purposes only. <br />
+        It is used for acdemic purposes only. <br />
         <img src = "img/csumb2-300x190.png" alt = "csumb logo" /> 
     </footer>
 </html>

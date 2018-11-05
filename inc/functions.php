@@ -3,6 +3,7 @@ $temp = array();
     
 function iCannnotBelieveIHadtoWriteThisFunctionMyselfPHPhasFAILEDME($var) {
         for( $i = 0; $i < count($_SESSION['cart']); $i++) {
+            echo "<script> console.log('".$_SESSION['cart'][$i]['flowerName']."'); </script>";
             if ($var == $_SESSION['cart'][$i]['flowerName']) {
                 return true;
             }
