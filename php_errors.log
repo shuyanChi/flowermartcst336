@@ -1,0 +1,6 @@
+[06-Nov-2018 06:37:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/flowermartcst336/admin/addFlower.php on line 62
+[06-Nov-2018 06:37:43 UTC] PHP Stack trace:
+[06-Nov-2018 06:37:43 UTC] PHP   1. {main}() /home/ubuntu/workspace/flowermartcst336/admin/addFlower.php:0
+[06-Nov-2018 06:37:56 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/flowermartcst336/admin/addFlower.php on line 62
+[06-Nov-2018 06:37:56 UTC] PHP Stack trace:
+[06-Nov-2018 06:37:56 UTC] PHP   1. {main}() /home/ubuntu/workspace/flowermartcst336/admin/addFlower.php:0

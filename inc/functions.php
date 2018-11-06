@@ -116,7 +116,8 @@ function displayResults() {
             
         //Display item as tablerow.
         echo '<tr>';
-        echo "<td><img src='$flower_img' class=images></td>";
+        //echo "<td><img src='$flower_img' class= 'images'></td>";
+        echo "<td><img src='$flower_img'  style = 'width: 250px; height: 200px;'></td>";
         echo "<td>";
         echo "<h4>$flowerName</h4>";
         
@@ -170,7 +171,8 @@ function displayCart() {
                 $quantity = $item['quantity'];
                 // Display the item as a table row.
                 echo "<tr>";
-                echo "<td><img src='$flower_img'></td>";
+                //echo "<td><img src='$flower_img' class = 'images'></td>";
+                echo "<td><img src='$flower_img' style = 'width: 250px; height: 200px;'></td>";
                 echo "<td><h4>$flowerName</h4></td>";
                 echo "<td><h4>$$flowerPrice</h4></td>";
                 //echo "<td><h4>$itemQuant</h4></td>";
