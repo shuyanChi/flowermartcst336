@@ -26,7 +26,7 @@
     //echo "flower image = " . $_GET['flower_img'];
     echo "<strong>" . $_GET['flowerName'] . "</strong><br/>";
     echo "<strong> History: " . $_GET['flowerDesc'] . "</strong> <br/>";
-    echo "<img src='" . $_GET['flower_img'] . "' /><br/>"; 
+    echo "<img class=images src=' " . $_GET['flower_img'] . "' /><br/>"; 
     if (empty($record[0]['purchaseDate'])) {
         echo "No purchase info.";
     } else {

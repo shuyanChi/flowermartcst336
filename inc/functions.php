@@ -116,7 +116,7 @@ function displayResults() {
             
         //Display item as tablerow.
         echo '<tr>';
-        echo "<td><img src='$flower_img'></td>";
+        echo "<td><img src='$flower_img' class=images></td>";
         echo "<td>";
         echo "<h4>$flowerName</h4>";
         
@@ -216,5 +216,50 @@ function nuke() {
         displayCart();
     }
 }
+
+function validateSession(){
+    if (!isset($_SESSION['adminFullName'])) {
+        header("Location: index.php");  //redirects users who haven't logged in 
+        exit;
+    }
+}
+
+function displayAllProducts(){
+    global $dbConn;
+    
+    $sql = "SELECT * FROM flowers ORDER BY flowerName";
+    $stmt = $dbConn->prepare($sql);
+    $stmt->execute();
+    $records = $stmt->fetchAll(PDO::FETCH_ASSOC); //we're expecting multiple records
+
+    foreach ($records as $record) {
+        echo "<form action='addFlower.php'>";
+        echo "<input type='hidden' name='flowerId' value='".$record['flower_Id']."'>";
+        echo "<button type='submit' class='btn btn-primary'>Add</button>";
+        echo "</form>";
+        //echo "[<a href='deleteProduct.php?productId=".$record['productId']."'>Delete</a>]";
+        echo "<form action='deleteFlower.php' onsubmit='return confirmDelete()'>";
+        echo "<input type='hidden' name='flowerId' value='".$record['flower_Id']."'>";
+        echo "<button type='submit' class='btn btn-warning'>Delete</button>";
+        echo "</form>";
+        
+        echo "<a onclick='openModal()' target='productModal'
+        href='flowerInfo.php?flowerId=".$record['flower_Id']."'>".$record['flowerName']."</a>  ";
+        echo " $" . $record['flowerPrice']   . "<br><br>";
+        
+    }
+}
+function getFlowerInfo($flowerId) {
+     global $dbConn;
+    
+    $sql = "SELECT * FROM flowers WHERE flower_Id = $flowerId";
+    $stmt = $dbConn->prepare($sql);
+    $stmt->execute();
+    $record = $stmt->fetch(PDO::FETCH_ASSOC); //we're expecting multiple records   
+    return $record;
+     
+    
+}
+
 
 ?>
